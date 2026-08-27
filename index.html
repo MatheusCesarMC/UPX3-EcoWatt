@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWatt - Simulador Solar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>EcoWatt</h1>
+        <p>Simulador de Potencial de Energia Solar</p>
+    </header>
+
+    <main>
+        <section class="apresentacao">
+            <h2>Descubra o potencial solar do seu imóvel</h2>
+            <p>
+                Informe alguns dados básicos e veja uma estimativa de geração de energia,
+                economia mensal e tempo de retorno do investimento.
+            </p>
+        </section>
+
+        <section class="simulador">
+            <h2>Faça sua simulação</h2>
+
+            <label for="consumo">Consumo mensal de energia (kWh)</label>
+            <input type="number" id="consumo" placeholder="Ex: 400">
+
+            <label for="area">Área disponível no telhado (m²)</label>
+            <input type="number" id="area" placeholder="Ex: 30">
+
+            <label for="cidade">Localização</label>
+            <select id="cidade">
+                <option value="5.2">Belo Horizonte</option>
+                <option value="4.8">São Paulo</option>
+                <option value="5.0">Rio de Janeiro</option>
+                <option value="5.6">Fortaleza</option>
+            </select>
+
+            <label for="tarifa">Valor aproximado do kWh (R$)</label>
+            <input type="number" id="tarifa" value="0.95" step="0.01">
+
+            <button id="btnSimular">Simular</button>
+        </section>
+
+        <section class="resultado" id="resultado">
+            <h2>Resultado da simulação</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <span>☀️</span>
+                    <h3>Geração estimada</h3>
+                    <p id="geracao">-</p>
+                </div>
+
+                <div class="card">
+                    <span>⚡</span>
+                    <h3>Consumo atendido</h3>
+                    <p id="percentual">-</p>
+                </div>
+
+                <div class="card">
+                    <span>💰</span>
+                    <h3>Economia estimada</h3>
+                    <p id="economia">-</p>
+                </div>
+
+                <div class="card">
+                    <span>📅</span>
+                    <h3>Retorno estimado</h3>
+                    <p id="retorno">-</p>
+                </div>
+            </div>
+
+            <p class="observacao">
+                Os valores apresentados são estimativas para fins acadêmicos e não substituem
+                um dimensionamento profissional de um sistema fotovoltaico.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>EcoWatt • Projeto acadêmico relacionado à ODS 7</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
