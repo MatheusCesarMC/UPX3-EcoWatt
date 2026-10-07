@@ -13,13 +13,6 @@ function fazerSimulacao() {
         return;
     }
 
-    /*
-        Valores usados na simulação:
-        - Cada painel ocupa aproximadamente 2 m²
-        - Cada painel possui aproximadamente 0,55 kWp
-        - Eficiência geral considerada: 80%
-    */
-
     const quantidadePaineis = Math.floor(area / 2);
 
     if (quantidadePaineis < 1) {
@@ -28,19 +21,42 @@ function fazerSimulacao() {
     }
 
     const potenciaInstalada = quantidadePaineis * 0.55;
-    const geracaoMensal = potenciaInstalada * horasSol * 30 * 0.8;
+
+    const geracaoMensal =
+        potenciaInstalada * horasSol * 30 * 0.8;
 
     const percentualAtendido = Math.min(
         (geracaoMensal / consumo) * 100,
         100
     );
 
-    const energiaAproveitada = Math.min(geracaoMensal, consumo);
-    const economiaMensal = energiaAproveitada * tarifa;
+    const energiaAproveitada = Math.min(
+        geracaoMensal,
+        consumo
+    );
 
-    const custoSistema = potenciaInstalada * 4500;
-    const economiaAnual = economiaMensal * 12;
-    const retornoAnos = custoSistema / economiaAnual;
+    const consumoRestante = Math.max(
+        consumo - geracaoMensal,
+        0
+    );
+
+    const economiaMensal =
+        energiaAproveitada * tarifa;
+
+    const economiaAnual =
+        economiaMensal * 12;
+
+    const custoSistema =
+        potenciaInstalada * 4500;
+
+    const retornoAnos =
+        custoSistema / economiaAnual;
+
+    document.getElementById("paineis").textContent =
+        quantidadePaineis + " painéis";
+
+    document.getElementById("potencia").textContent =
+        potenciaInstalada.toFixed(2) + " kWp";
 
     document.getElementById("geracao").textContent =
         geracaoMensal.toFixed(0) + " kWh/mês";
@@ -54,8 +70,23 @@ function fazerSimulacao() {
             currency: "BRL"
         }) + "/mês";
 
+    document.getElementById("economiaAnual").textContent =
+        economiaAnual.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        }) + "/ano";
+
+    document.getElementById("restante").textContent =
+        consumoRestante.toFixed(0) + " kWh/mês";
+
     document.getElementById("retorno").textContent =
         retornoAnos.toFixed(1) + " anos";
+
+    document.getElementById("consumoAtual").textContent =
+        consumo.toFixed(0) + " kWh/mês";
+
+    document.getElementById("energiaGerada").textContent =
+        geracaoMensal.toFixed(0) + " kWh/mês";
 
     document.getElementById("resultado").style.display = "block";
 }
