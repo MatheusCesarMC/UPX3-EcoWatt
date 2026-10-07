@@ -6,6 +6,7 @@
     <title>EcoWatt - Simulador Solar</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header>
@@ -17,16 +18,22 @@
 
         <section class="apresentacao">
             <h2>Descubra o potencial solar do seu imóvel</h2>
+
             <p>
                 Informe alguns dados básicos e veja uma estimativa de geração
                 de energia, economia e retorno do investimento.
             </p>
         </section>
 
+
         <section class="simulador">
+
             <h2>Faça sua simulação</h2>
 
-            <label for="consumo">Consumo mensal de energia (kWh)</label>
+            <label for="consumo">
+                Consumo mensal de energia (kWh)
+            </label>
+
             <input
                 type="number"
                 id="consumo"
@@ -34,7 +41,11 @@
                 min="1"
             >
 
-            <label for="area">Área disponível no telhado (m²)</label>
+
+            <label for="area">
+                Área disponível no telhado (m²)
+            </label>
+
             <input
                 type="number"
                 id="area"
@@ -42,7 +53,11 @@
                 min="1"
             >
 
-            <label for="cidade">Localização</label>
+
+            <label for="cidade">
+                Localização
+            </label>
+
             <select id="cidade">
                 <option value="5.2">Belo Horizonte</option>
                 <option value="4.8">São Paulo</option>
@@ -50,7 +65,11 @@
                 <option value="5.6">Fortaleza</option>
             </select>
 
-            <label for="tarifa">Valor aproximado do kWh (R$)</label>
+
+            <label for="tarifa">
+                Valor aproximado do kWh (R$)
+            </label>
+
             <input
                 type="number"
                 id="tarifa"
@@ -59,132 +78,237 @@
                 min="0.01"
             >
 
-            <button id="btnSimular">Simular</button>
+
+            <button id="btnSimular">
+                Simular
+            </button>
+
         </section>
+
 
         <section class="resultado" id="resultado">
 
             <h2>Resultado da simulação</h2>
 
+
             <div class="cards">
 
                 <div class="card">
                     <span>☀️</span>
+
                     <h3>Painéis estimados</h3>
+
                     <p id="paineis">-</p>
                 </div>
 
+
                 <div class="card">
                     <span>⚡</span>
+
                     <h3>Potência instalada</h3>
+
                     <p id="potencia">-</p>
                 </div>
 
+
                 <div class="card">
                     <span>🔋</span>
+
                     <h3>Geração mensal</h3>
+
                     <p id="geracao">-</p>
                 </div>
 
+
                 <div class="card">
                     <span>📊</span>
+
                     <h3>Consumo atendido</h3>
+
                     <p id="percentual">-</p>
                 </div>
 
+
                 <div class="card">
                     <span>💰</span>
+
                     <h3>Economia mensal</h3>
+
                     <p id="economia">-</p>
                 </div>
 
+
                 <div class="card">
                     <span>📅</span>
+
                     <h3>Economia anual</h3>
+
                     <p id="economiaAnual">-</p>
                 </div>
 
+
                 <div class="card">
                     <span>🏠</span>
+
                     <h3>Consumo não atendido</h3>
+
                     <p id="restante">-</p>
                 </div>
 
+
                 <div class="card">
                     <span>⏱️</span>
+
                     <h3>Retorno estimado</h3>
+
                     <p id="retorno">-</p>
                 </div>
 
             </div>
 
+
             <div class="comparacao">
+
                 <h3>Comparação estimada</h3>
 
-                <div class="comparacao-item">
-                    <span>Consumo atual</span>
-                    <strong id="consumoAtual">-</strong>
-                </div>
 
                 <div class="comparacao-item">
-                    <span>Energia gerada pelo sistema</span>
-                    <strong id="energiaGerada">-</strong>
+
+                    <span>Consumo atual</span>
+
+                    <strong id="consumoAtual">-</strong>
+
                 </div>
+
+
+                <div class="comparacao-item">
+
+                    <span>Energia gerada pelo sistema</span>
+
+                    <strong id="energiaGerada">-</strong>
+
+                </div>
+
             </div>
 
+
+            <div class="progresso">
+
+                <div class="progresso-cabecalho">
+
+                    <h3>Consumo atendido pelo sistema</h3>
+
+                    <strong id="percentualBarra">0%</strong>
+
+                </div>
+
+
+                <div class="barra">
+
+                    <div
+                        class="barra-preenchida"
+                        id="barraPreenchida"
+                    ></div>
+
+                </div>
+
+
+                <p>
+                    A barra representa quanto do consumo mensal estimado
+                    pode ser atendido pela geração de energia solar.
+                </p>
+
+            </div>
+
+
             <p class="observacao">
+
                 Os valores apresentados são estimativas para fins acadêmicos.
-                O resultado não substitui um dimensionamento profissional de
-                um sistema fotovoltaico.
+                O resultado não substitui um dimensionamento profissional
+                de um sistema fotovoltaico.
+
             </p>
 
         </section>
+
 
         <section class="informacoes">
 
             <h2>Por que utilizar energia solar?</h2>
 
+
             <p>
+
                 A energia solar utiliza a luz do Sol para gerar eletricidade.
                 Além de ser uma fonte renovável, ela pode ajudar na redução
                 dos gastos com energia elétrica e contribuir para uma matriz
                 energética mais sustentável.
+
             </p>
 
+
             <div class="dicas">
+
+
                 <div>
+
                     <h3>💡 Economize energia</h3>
+
                     <p>
+
                         Utilize equipamentos eficientes e evite deixar
                         aparelhos ligados sem necessidade.
+
                     </p>
+
                 </div>
 
+
                 <div>
+
                     <h3>☀️ Aproveite o Sol</h3>
+
                     <p>
+
                         A energia solar é uma alternativa renovável que
                         pode reduzir a dependência da energia convencional.
+
                     </p>
+
                 </div>
 
+
                 <div>
+
                     <h3>🌱 Pense no futuro</h3>
+
                     <p>
+
                         A eficiência energética e o uso de fontes renováveis
                         contribuem para um consumo mais sustentável.
+
                     </p>
+
                 </div>
+
+
             </div>
 
         </section>
 
     </main>
 
+
     <footer>
-        <p>EcoWatt • Projeto acadêmico relacionado à ODS 7</p>
+
+        <p>
+            EcoWatt • Projeto acadêmico relacionado à ODS 7
+        </p>
+
     </footer>
 
+
     <script src="script.js"></script>
+
 </body>
 </html>
