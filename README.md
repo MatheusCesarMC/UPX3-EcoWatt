@@ -51,6 +51,66 @@ O EcoWatt busca incentivar o conhecimento sobre fontes renováveis de energia, p
 
 ---
 
+## 🚀 Como executar o projeto
+
+### 1. Clone o repositório
+
+No terminal, execute:
+
+```bash
+git clone https://github.com/MatheusCesarMC/UPX3-EcoWatt.git
+```
+
+### 2. Acesse a pasta do projeto
+
+```bash
+cd UPX3-EcoWatt
+```
+
+### 3. Execute o projeto
+
+Como o EcoWatt é desenvolvido com HTML, CSS e JavaScript, não é necessário instalar dependências.
+
+A forma recomendada de executar o projeto é utilizando a extensão **Live Server** no Visual Studio Code.
+
+No VS Code:
+
+1. Abra a pasta do projeto;
+2. Abra o arquivo `index.html`;
+3. Clique com o botão direito no arquivo;
+4. Selecione **"Open with Live Server"**.
+
+O projeto será aberto automaticamente no navegador.
+
+---
+
+## 📁 Estrutura do projeto
+
+```text
+UPX3-EcoWatt/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
+
+### Arquivos principais
+
+**`index.html`**  
+Contém a estrutura e os elementos da página.
+
+**`style.css`**  
+Responsável pela aparência, organização e responsividade do site.
+
+**`script.js`**  
+Contém os cálculos e a lógica responsável pelo funcionamento do simulador.
+
+**`README.md`**  
+Contém as informações e instruções sobre o projeto.
+
+---
+
 ## 💻 Tecnologias utilizadas
 
 O projeto foi desenvolvido utilizando tecnologias básicas de desenvolvimento web:
@@ -105,3 +165,4 @@ Projeto desenvolvido para a disciplina de **UPX 3**.
 ✅ Interface responsiva  
 ✅ Barra de consumo atendido  
 ✅ Informações sobre energia solar  
+✅ Instruções de execução disponíveis
